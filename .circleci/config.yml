@@ -7,19 +7,19 @@ version: 2.1
 jobs:
   Build:
     docker:
-      - image: cimg/base:stable
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - run: npm run lint
   Test:
     docker:
-      - image: cimg/base:stable
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - run: npm run test
   Analyze:
     docker:
-      - image: cimg/base:stable
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - run: npm audit
